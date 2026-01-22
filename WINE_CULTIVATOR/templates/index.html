@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Cultivar Prediction</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Wine Cultivar Prediction System</h1>
+        <form method="POST">
+            <label for="alcohol">Alcohol:</label>
+            <input type="text" id="alcohol" name="alcohol" placeholder="e.g., 13.5" required>
+
+            <label for="malic_acid">Malic Acid:</label>
+            <input type="text" id="malic_acid" name="malic_acid" placeholder="e.g., 2.14" required>
+
+            <label for="ash">Ash:</label>
+            <input type="text" id="ash" name="ash" placeholder="e.g., 2.3" required>
+
+            <label for="alcalinity_of_ash">Alcalinity of Ash:</label>
+            <input type="text" id="alcalinity_of_ash" name="alcalinity_of_ash" placeholder="e.g., 19.0" required>
+
+            <label for="flavanoids">Flavanoids:</label>
+            <input type="text" id="flavanoids" name="flavanoids" placeholder="e.g., 2.0" required>
+
+            <label for="color_intensity">Color Intensity:</label>
+            <input type="text" id="color_intensity" name="color_intensity" placeholder="e.g., 5.1" required>
+
+            <input type="submit" value="Predict Cultivar">
+        </form>
+
+        {% if prediction %}
+            <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
